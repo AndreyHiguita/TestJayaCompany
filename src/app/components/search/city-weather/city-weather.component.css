@@ -1,0 +1,152 @@
+body{
+    overflow-x: hidden;
+}
+
+.content-hour-scroll{
+    max-width: 100% !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+.content-hour{
+    
+    min-width: 1310px;
+    
+}
+
+.content-day-scroll{
+    max-width: 100% !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+.content-day{
+    
+    min-width: 1310px;
+    
+}
+
+.list-details-inline{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.list-details-inline li{
+    display: inline-block;
+    padding: 3px 15px;
+    font-weight: 500;
+}
+
+.list-details-inline li span{
+    font-weight: lighter;
+}
+
+.info-hourly{
+    width: calc(100% / 49);
+    height: 40px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: 10px;
+}
+
+.info-hourly * {
+    text-align: center;
+}
+
+.content-info{
+    width: calc(100% * 2);
+}
+
+.info-hourly .border-ind{
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background: #7d7d7d;
+    top: -12px;
+}
+
+.info-hourly .border-ind-2{
+    left: calc(100%);
+}
+
+.info-hourly h4{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+
+.bar-hourly{
+    width: calc(100% / 49);
+    height: 40px;
+    display: inline-block;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    background: e7ebf0;
+}
+
+.info-daily{
+    width: calc(100% / 8);
+    height: 40px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: 10px;
+}
+
+.info-daily * {
+    text-align: center;
+}
+
+.info-daily .border-ind{
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background: #7d7d7d;
+    top: -12px;
+}
+
+.info-daily .border-ind-2{
+    left: calc(50%);
+}
+
+.bar-daily{
+    width: calc(100% / 8);
+    height: 40px;
+    display: inline-block;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    background: #e7ebf0;
+}
+
+.timeline-rain{
+    background-color: #80a5d6;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+
+.timeline-cloudy, .timeline-cloudy-night{
+    background-color: #878f9a;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+
+.timeline-partly-cloudy-night, .timeline-partly-cloudy-day{
+    background-color: #b6b9bd;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+
+.timeline-fog{
+    background-color: #dde1e6;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+
+.timeline-clear-day, .timeline-clear-night{
+    background-color: #e7ebf0;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}

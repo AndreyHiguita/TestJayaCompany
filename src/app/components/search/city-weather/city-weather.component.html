@@ -1,0 +1,92 @@
+<div *ngIf="cityWeather != undefined;">
+    <div class="row bg-gray-2">
+        <div class="col-md-12 bg-gray-2">
+            <ul class="list-details-inline">
+                <li>Wind:
+                    <span>{{ cityWeather.currently.windGust | number:'1.0-0' }} mph</span>
+                </li>
+                <li>Humidity:
+                    <span>{{ cityWeather.currently.humidity * 100 | number:'1.0-0' }}%</span>
+                </li>
+                <li>Dew Pt:
+                    <span>{{ cityWeather.currently.dewPoint | number:'1.0-0' }}°</span>
+                </li>
+                <li>UV Index:
+                    <span>{{ cityWeather.currently.uvIndex }}</span>
+                </li>
+                <li>Visibility:
+                    <span>{{ cityWeather.currently.visibility | number:'1.0-0' }} mi</span>
+                </li>
+                <li>Pressure:
+                    <span>{{ cityWeather.currently.pressure | number:'1.0-0' }} mb</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>{{ cityWeather.currently.apparentTemperature | number:'1.0-0' }}° {{ cityWeather.currently.summary }}</h3>
+                <ul class="list-details-inline">
+                    <li>Feels Like:
+                        <span>{{ cityWeather.currently.apparentTemperature | number:'1.0-0' }} mph</span>
+                    </li>
+                    <li>Low:
+                        <span>{{ cityWeather.daily.data[0].temperatureLow | number:'1.0-0' }}%</span>
+                    </li>
+                    <li>High:
+                        <span>{{ cityWeather.daily.data[0].temperatureHigh | number:'1.0-0' }}°</span>
+                    </li>
+                </ul>
+                <p>{{ cityWeather.hourly.summary }}</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">Weather conditions hour-by-hour for the next two days</h3>
+            <div class="row content-hour-scroll">
+                <div class="col-md-12 content-hour">
+                    <div data-toggle="tooltip" data-placement="top" title="{{ hour.summary }}" class="timeline-{{ hour.icon }} bar-hourly" *ngFor="let hour of cityWeather.hourly.data"></div>
+                    <div class="info-hourly" *ngFor="let hour of cityWeather.hourly.data; index as i">
+                        <div class="content-info" *ngIf="i % 2 == 0">
+                            <div class="border-ind border-ind-1"></div>
+                            <div class="border-ind border-ind-2"></div>
+                            <p>{{ hour.time + '999' | date :'HH:mm' : cityWeather.timezone }}</p>
+                            <h4>{{ hour.temperature | number:'1.0-0' }}°</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">Weather conditions day-by-day for the next week.</h3>
+            <div class="row content-day-scroll">
+                <div class="col-md-12 content-day">
+                    <div data-toggle="tooltip" data-placement="top" title="{{ day.summary }}" class="timeline-{{ day.icon }} bar-daily" *ngFor="let day of cityWeather.daily.data"></div>
+                    <div class="info-daily" *ngFor="let day of cityWeather.daily.data; index as i">
+                        <div class="border-ind border-ind-2"></div>
+                        <p>{{ day.time + '999' | date :'EEE' : cityWeather.timezone }}</p>
+                        <h4>{{ day.temperatureHigh | number:'1.0-0' }}°</h4>
+                        <h4>↕</h4>
+                        <h4>{{ day.temperatureLow | number:'1.0-0' }}°</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

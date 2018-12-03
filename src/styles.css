@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-gray-1{
+    background-color: #dfdfdf;
+}
+
+.bg-gray-2{
+    background-color: #eee;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.no-display{
+    display: none;
+}
